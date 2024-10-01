@@ -12,6 +12,7 @@ class Fibonacci
   end
 
   def fibs_rec(num)
+    # puts 'This was printed recursively'
     return [] if num.zero?
     return [0] if num == 1
     return [0, 1] if num == 2
@@ -28,3 +29,8 @@ puts ''
 
 puts 'Recursive Fibonacci:'
 10.times { |num| pp Fibonacci.new.fibs_rec(num) }
+
+puts ''
+
+puts 'The first 8 Fibonacci numbers are:'
+p Fibonacci.new.fibs_rec(8)
