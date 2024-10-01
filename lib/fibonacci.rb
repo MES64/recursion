@@ -3,7 +3,7 @@
 # Fibonacci has methods to return an array of the first n fibonacci numbers using an
 # iterative approach and using a recursive approach
 class Fibonacci
-  def self.fibs(num)
+  def fibs(num)
     return [] if num.zero?
     return [0] if num == 1
     return [0, 1] if num == 2
@@ -12,4 +12,4 @@ class Fibonacci
   end
 end
 
-10.times { |num| pp Fibonacci.fibs(num) }
+10.times { |num| pp Fibonacci.new.fibs(num) }
