@@ -6,9 +6,8 @@ class Fibonacci
   def fibs(num)
     return [] if num.zero?
     return [0] if num == 1
-    return [0, 1] if num == 2
 
-    2.upto(num - 1).reduce([0, 1]) { |fib_arr, fib_num| fib_arr << fib_arr[fib_num - 1] + fib_arr[fib_num - 2] }
+    (num - 2).times.reduce([0, 1]) { |fib_arr, _| fib_arr << fib_arr[-1] + fib_arr[-2] }
   end
 
   def fibs_rec(num)
@@ -18,7 +17,7 @@ class Fibonacci
     return [0, 1] if num == 2
 
     fib_arr = fibs_rec(num - 1)
-    fib_arr << fib_arr[num - 2] + fib_arr[num - 3]
+    fib_arr << fib_arr[-1] + fib_arr[-2]
   end
 end
 
